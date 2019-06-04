@@ -1,0 +1,44 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" >
+    <xs:element name="DataSourceConfig">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="datasource" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="datasource">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="var" minOccurs="0" maxOccurs="unbounded"  />
+                <xs:element name="path" type="myType" minOccurs="0" maxOccurs="unbounded"  />
+                <xs:element name="file" type="myType" minOccurs="0" maxOccurs="unbounded"  />
+                <xs:element name="class" type="myType" minOccurs="0" maxOccurs="unbounded"  />
+				<xs:element name="driver" type="myType" minOccurs="0" maxOccurs="unbounded"  />
+				<xs:element name="url" type="myType" minOccurs="0" maxOccurs="unbounded"  />
+				<xs:element name="username" type="myType" minOccurs="0" maxOccurs="unbounded"  />
+				<xs:element name="password" type="myType" minOccurs="0" maxOccurs="unbounded"  />
+            </xs:sequence>
+            <xs:attribute name="type" type="xs:string" use="required" />
+            <xs:attribute name="name" type="xs:string"/>
+        </xs:complexType>
+     <xs:unique name="unique-name">
+      <xs:selector xpath="var"/>
+      <xs:field xpath="@name"/>
+   </xs:unique>
+    </xs:element>
+    <xs:element name="var">
+       <xs:complexType>
+         <xs:simpleContent>
+           <xs:extension base="xs:string">
+             <xs:attribute name="name" type="xs:string" use="required"/>
+             <xs:attribute name="type" type="xs:string" use="required"/>
+           </xs:extension>
+         </xs:simpleContent>
+     </xs:complexType>
+    </xs:element>
+    <xs:simpleType name="myType">
+        <xs:restriction base="xs:string">
+        </xs:restriction>
+    </xs:simpleType>
+</xs:schema>

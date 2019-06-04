@@ -1,0 +1,1 @@
+-c resource\newdatasource.xml -o output.doc resource\newtemplatezzz.doc

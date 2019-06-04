@@ -1,0 +1,11 @@
+03-代码设计/.idea
+03-代码设计/bin/
+03-代码设计/out
+03-代码设计/resource/*.log
+03-代码设计/resource/*_[0-9].doc
+03-代码设计/resource/*.pdf
+03-代码设计/resource/*_[0-9].docx
+output.doc
+*.class
+03-代码设计/.settings
+.~*.*
